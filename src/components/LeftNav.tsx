@@ -2,8 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './LeftNav.css';
 
-const LeftNav = () => {
-  const navItems = [
+interface NavItem {
+  path: string;
+  label: string;
+  icon: string;
+}
+
+const LeftNav: React.FC = () => {
+  const navItems: NavItem[] = [
     { path: '/home', label: 'Dashboard', icon: '📊' },
     { path: '/profile', label: 'Profile', icon: '👤' },
     { path: '/settings', label: 'Settings', icon: '⚙️' },

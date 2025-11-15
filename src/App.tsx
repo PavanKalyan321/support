@@ -6,7 +6,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Provider store={store}>
       <Router>
@@ -26,6 +26,6 @@ function App() {
       </Router>
     </Provider>
   );
-}
+};
 
 export default App;

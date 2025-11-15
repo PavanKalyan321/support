@@ -2,11 +2,12 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../store/authSlice';
+import { RootState, AppDispatch } from '../store/store';
 import './TopBar.css';
 
-const TopBar = () => {
-  const { user } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+const TopBar: React.FC = () => {
+  const { user } = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   const handleLogout = () => {
