@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { RootState } from '../store/store';
 import TopBar from './TopBar';
 import LeftNav from './LeftNav';
+import Dashboard from './Dashboard';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -19,10 +20,7 @@ const Home: React.FC = () => {
       <div className="home-content">
         <LeftNav />
         <div className="main-content">
-          <div className="content-area">
-            <h1>Welcome to Dashboard</h1>
-            <p>Select a menu item from the left navigation to get started.</p>
-          </div>
+          <Dashboard />
         </div>
       </div>
     </div>

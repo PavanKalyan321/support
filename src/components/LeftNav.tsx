@@ -1,23 +1,33 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import {
+  Home20Regular,
+  AlertRegular,
+  BoxRegular,
+  PowerRegular,
+  WaterRegular,
+  EarthLeafRegular,
+  BrightnessHighRegular,
+  DocumentRegular,
+} from '@fluentui/react-icons';
 import './LeftNav.css';
 
 interface NavItem {
   path: string;
   label: string;
-  icon: string;
+  icon: React.ReactNode;
 }
 
 const LeftNav: React.FC = () => {
   const navItems: NavItem[] = [
-    { path: '/home', label: 'Dashboard', icon: '📊' },
-    { path: '/profile', label: 'Profile', icon: '👤' },
-    { path: '/settings', label: 'Settings', icon: '⚙️' },
-    { path: '/analytics', label: 'Analytics', icon: '📈' },
-    { path: '/reports', label: 'Reports', icon: '📋' },
-    { path: '/users', label: 'Users', icon: '👥' },
-    { path: '/notifications', label: 'Notifications', icon: '🔔' },
-    { path: '/help', label: 'Help', icon: '❓' },
+    { path: '/home', label: 'Homepage', icon: <Home20Regular /> },
+    { path: '/alarms', label: 'Alarms', icon: <AlertRegular /> },
+    { path: '/assets', label: 'Assets', icon: <BoxRegular /> },
+    { path: '/energy', label: 'Energy', icon: <PowerRegular /> },
+    { path: '/water', label: 'Water', icon: <WaterRegular /> },
+    { path: '/sustainability', label: 'Sustainability', icon: <EarthLeafRegular /> },
+    { path: '/lighting', label: 'Lighting', icon: <BrightnessHighRegular /> },
+    { path: '/reports', label: 'Reports', icon: <DocumentRegular /> },
   ];
 
   return (

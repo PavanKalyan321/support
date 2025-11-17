@@ -1,0 +1,75 @@
+.chart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 2rem;
+}
+
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.filter-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-select:hover {
+  border-color: #c41e3a;
+  box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #c41e3a;
+  box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+}
+
+.chart-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chart-card {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .chart-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+}

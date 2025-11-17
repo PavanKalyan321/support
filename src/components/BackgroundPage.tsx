@@ -3,9 +3,9 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../store/authSlice';
 import { AppDispatch } from '../store/store';
-import './Login.css';
+import './BackgroundPage.css';
 
-const Login: React.FC = () => {
+const BackgroundPage: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [agreeTerms, setAgreeTerms] = useState<boolean>(false);
@@ -22,7 +22,7 @@ const Login: React.FC = () => {
 
   return (
     <div
-      className="login-wrapper"
+      className="background-page"
       style={{ backgroundImage: `url(/loginbackground.svg)` }}
     >
       {/* Login Form Popup - Left Side */}
@@ -88,4 +88,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default BackgroundPage;

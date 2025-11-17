@@ -1,0 +1,91 @@
+.welcome-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.welcome-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.welcome-user {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f0f0f0;
+}
+
+.welcome-text h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 0.5rem 0;
+}
+
+.welcome-text p {
+  font-size: 1rem;
+  color: #999;
+  margin: 0;
+  font-weight: 400;
+}
+
+.add-widgets-btn {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-widgets-btn:hover {
+  background-color: #333;
+  box-shadow: 0 4px 12px rgba(34, 34, 34, 0.15);
+}
+
+.add-widgets-btn:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .welcome-card {
+    padding: 1.5rem;
+  }
+
+  .welcome-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .welcome-user {
+    width: 100%;
+  }
+
+  .welcome-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .add-widgets-btn {
+    width: 100%;
+  }
+}
