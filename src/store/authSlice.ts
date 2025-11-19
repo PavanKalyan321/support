@@ -9,10 +9,23 @@ interface AuthState {
   user: User | null;
 }
 
-const initialState: AuthState = {
-  isAuthenticated: false,
-  user: null,
+// Load initial state from localStorage
+const loadInitialState = (): AuthState => {
+  try {
+    const savedAuth = localStorage.getItem('auth');
+    if (savedAuth) {
+      return JSON.parse(savedAuth);
+    }
+  } catch (error) {
+    console.error('Error loading auth from localStorage:', error);
+  }
+  return {
+    isAuthenticated: false,
+    user: null,
+  };
 };
+
+const initialState: AuthState = loadInitialState();
 
 const authSlice = createSlice({
   name: 'auth',
@@ -21,10 +34,14 @@ const authSlice = createSlice({
     login: (state, action: PayloadAction<User>) => {
       state.isAuthenticated = true;
       state.user = action.payload;
+      // Save to localStorage
+      localStorage.setItem('auth', JSON.stringify(state));
     },
     logout: (state) => {
       state.isAuthenticated = false;
       state.user = null;
+      // Remove from localStorage
+      localStorage.removeItem('auth');
     },
   },
 });
