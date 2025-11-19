@@ -53,53 +53,55 @@ const Dashboard: React.FC = () => {
   return (
     <div className="dashboard">
       <div className="dashboard-container">
-        <WelcomeCard
-          userName="Rajesh"
-          subtitle="Pretium vulputate fermentum nec neque scelerisque."
-          userImage="/api/placeholder/80/80"
-          onAddWidgets={() => console.log('Add widgets clicked')}
-        />
+        <div>
+          <WelcomeCard
+            userName="Rajesh"
+            subtitle="Pretium vulputate fermentum nec neque scelerisque."
+            userImage="/api/placeholder/80/80"
+            onAddWidgets={() => console.log('Add widgets clicked')}
+          />
 
-        <div className="stats-grid">
-          <StatCard
-            icon={<AlertRegular />}
-            title="Active Alarms"
-            value={30}
-            change="+23% since last month"
-            isPositive={true}
-            bgColor="#fff5f5"
-            iconBgColor="#ef4444"
-          />
-          <StatCard
-            icon={<PowerRegular />}
-            title="Energy Consumption"
-            value={112430}
-            unit=" kWh"
-            change="+23% since last month"
-            isPositive={true}
-            bgColor="#f0fdf4"
-            iconBgColor="#10b981"
-          />
-          <StatCard
-            icon={<WaterRegular />}
-            title="Water Consumption"
-            value={14520}
-            unit=" kL"
-            change="+23% since last month"
-            isPositive={true}
-            bgColor="#f0f9ff"
-            iconBgColor="#3b82f6"
-          />
-          <StatCard
-            icon={<StatusRegular />}
-            title="Asset Health Score"
-            value={89}
-            unit=" / 100"
-            change="+23% since last month"
-            isPositive={true}
-            bgColor="#f0fdf4"
-            iconBgColor="#10b981"
-          />
+          <div className="stats-grid">
+            <StatCard
+              icon={<AlertRegular />}
+              title="Active Alarms"
+              value={30}
+              change="+23% since last month"
+              isPositive={true}
+              bgColor="#fff5f5"
+              iconBgColor="#ef4444"
+            />
+            <StatCard
+              icon={<PowerRegular />}
+              title="Energy Consumption"
+              value={112430}
+              unit=" kWh"
+              change="+23% since last month"
+              isPositive={true}
+              bgColor="#f0fdf4"
+              iconBgColor="#10b981"
+            />
+            <StatCard
+              icon={<WaterRegular />}
+              title="Water Consumption"
+              value={14520}
+              unit=" kL"
+              change="+23% since last month"
+              isPositive={true}
+              bgColor="#f0f9ff"
+              iconBgColor="#3b82f6"
+            />
+            <StatCard
+              icon={<StatusRegular />}
+              title="Asset Health Score"
+              value={89}
+              unit=" / 100"
+              change="+23% since last month"
+              isPositive={true}
+              bgColor="#f0fdf4"
+              iconBgColor="#10b981"
+            />
+          </div>
         </div>
 
         <div className="charts-grid">
