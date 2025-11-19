@@ -18,7 +18,6 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
-import DashboardTopBar from './DashboardTopBar';
 import WelcomeCard from './WelcomeCard';
 import StatCard from './StatCard';
 import ChartCard from './ChartCard';
@@ -53,16 +52,6 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="dashboard">
-      <DashboardTopBar
-        alerts={[
-          { type: 'high', count: 100 },
-          { type: 'medium', count: 100 },
-          { type: 'low', count: 100 },
-        ]}
-        dateRange="Jan 20, 2025 - Feb 09, 2025"
-        userImage="/api/placeholder/40/40"
-      />
-
       <div className="dashboard-container">
         <WelcomeCard
           userName="Rajesh"
