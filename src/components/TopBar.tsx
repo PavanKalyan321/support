@@ -1,43 +1,111 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { logout } from '../store/authSlice';
-import { RootState, AppDispatch } from '../store/store';
+import { Search, Bell, Settings } from 'lucide-react';
 import './TopBar.css';
 
-const TopBar: React.FC = () => {
-  const { user } = useSelector((state: RootState) => state.auth);
-  const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
+interface AlertBadgeProps {
+  count: number;
+  label: string;
+  color: string;
+  borderColor: string;
+}
 
-  const handleLogout = () => {
-    dispatch(logout());
-    navigate('/');
-  };
+const AlertBadge: React.FC<AlertBadgeProps> = ({ count, label, color, borderColor }) => {
+  return (
+    <div
+      className="topbar-alert-badge"
+      style={{ borderColor }}
+    >
+      {/* Icon Container */}
+      <div
+        className="topbar-alert-icon"
+        style={{ backgroundColor: color }}
+      >
+        <Bell className="w-[17px] h-[19px] text-white" strokeWidth={2} />
+      </div>
+
+      {/* Count */}
+      <span className="topbar-alert-count">
+        {count}
+      </span>
+
+      {/* Label */}
+      <span className="topbar-alert-label">
+        {label}
+      </span>
+    </div>
+  );
+};
+
+const TopBar: React.FC = () => {
 
   return (
-    <div className="topbar">
-      <div className="topbar-brand">
-        <div className="brand-logo">
-          <svg viewBox="0 0 40 40" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-            <g fill="#FF6B35">
-              <path d="M20 5 L28 12 L25 15 L20 10 L15 15 L12 12 Z" />
-              <path d="M10 20 L15 15 L18 18 L20 16 L22 18 L25 15 L30 20" />
-              <circle cx="14" cy="26" r="3" />
-              <circle cx="26" cy="26" r="3" />
-              <rect x="10" y="20" width="20" height="2" />
-              <rect x="12" y="22" width="16" height="6" rx="1" />
-            </g>
-          </svg>
+    <div className="topbar-wrapper">
+      {/* Top Nav Bar */}
+      <div className="topbar">
+
+        {/* Left Section: Label/Breadcrumb */}
+        <div className="topbar-left">
+          <span className="topbar-label">Dashboard</span>
         </div>
-        <div className="brand-text">
-          <h2 className="brand-name">The Soaltee</h2>
-          <p className="brand-subtitle">Hotels & Resorts</p>
+
+        {/* Center Section: Search and Alerts */}
+        <div className="topbar-center">
+
+          {/* Search Input */}
+          <div className="topbar-search">
+            <input
+              type="text"
+              placeholder="Search ...."
+              className="topbar-search-input"
+            />
+            <Search className="topbar-search-icon" />
+          </div>
+
+          {/* Alert Badges Container */}
+          <div className="topbar-alerts">
+
+            {/* High Alert Badge */}
+            <AlertBadge
+              count={100}
+              label="High Alert"
+              color="#F44455"
+              borderColor="#F44455"
+            />
+
+            {/* Medium Alert Badge */}
+            <AlertBadge
+              count={100}
+              label="Medium Alert"
+              color="#5B7DFF"
+              borderColor="#5B7DFF"
+            />
+
+            {/* Low Alert Badge */}
+            <AlertBadge
+              count={100}
+              label="Low Alert"
+              color="#F9984E"
+              borderColor="#F9984E"
+            />
+
+            {/* Settings and Profile */}
+            <div className="topbar-actions">
+              {/* Settings Icon */}
+              <button className="topbar-icon-btn">
+                <Settings className="w-[14px] h-[15px] text-[#242424]" strokeWidth={1.5} />
+              </button>
+
+              {/* Profile Image */}
+              <div className="topbar-avatar">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="topbar-right">
-        <span className="welcome-text">Welcome, {user?.username}</span>
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
       </div>
     </div>
   );

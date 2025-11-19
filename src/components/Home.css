@@ -5,13 +5,13 @@
 
 .home-content {
   display: flex;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 64px);
 }
 
 .main-content {
   flex: 1;
-  margin-left: 250px;
-  background-color: #ecf0f1;
+  margin-left: 230px;
+  background-color: #f9fafb;
   overflow-y: auto;
 }
 
