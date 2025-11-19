@@ -43,9 +43,18 @@ const TopBar: React.FC = () => {
       {/* Top Nav Bar */}
       <div className="topbar">
 
-        {/* Left Section: Label/Breadcrumb */}
+        {/* Left Section: Hotel Branding */}
         <div className="topbar-left">
-          <span className="topbar-label">Dashboard</span>
+          <div className="topbar-logo">
+            <svg width="40" height="26" viewBox="0 0 60 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 8L30 18L20 28" stroke="#E5672A" strokeWidth="3" fill="none"/>
+              <circle cx="15" cy="18" r="10" fill="#E5672A"/>
+            </svg>
+          </div>
+          <div className="topbar-brand-info">
+            <div className="topbar-brand-name">The Soaltee</div>
+            <div className="topbar-brand-subtitle">Hotels & Resorts</div>
+          </div>
         </div>
 
         {/* Center Section: Search and Alerts */}

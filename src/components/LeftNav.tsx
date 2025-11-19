@@ -33,26 +33,6 @@ const LeftNav: React.FC = () => {
 
   return (
     <div className="leftnav-container">
-      {/* Top black bar */}
-      <div className="leftnav-topbar" />
-
-      {/* Logo section */}
-      <div className="leftnav-brand">
-        <div className="leftnav-logo">
-          <svg width="60" height="37" viewBox="0 0 60 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 8L30 18L20 28" stroke="#E5672A" strokeWidth="3" fill="none"/>
-            <circle cx="15" cy="18" r="10" fill="#E5672A"/>
-          </svg>
-        </div>
-        <div className="leftnav-brand-text">
-          <div className="leftnav-brand-name">The Soaltee</div>
-          <div className="leftnav-brand-subtitle">Hotels & Resorts</div>
-        </div>
-      </div>
-
-      {/* Divider line */}
-      <div className="leftnav-divider" />
-
       {/* Menu items */}
       <nav className="leftnav-menu">
         {navItems.map((item) => (
